@@ -1,0 +1,38 @@
+﻿<Window x:Class="NorthernLightsHospital.SupprimerMedecin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NorthernLightsHospital"
+        mc:Ignorable="d"
+        Title="Supprimer Medecin" Height="459.374" Width="556.25" Icon="Images/icons8_doctor_male_25px.png" WindowStartupLocation="CenterScreen">
+    <Grid Background="AntiqueWhite" RenderTransformOrigin="0.557,0.729">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="btnSupprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="145,326,0,0" VerticalAlignment="Top" Width="239" Background="#FFF5E4CC" Height="59" FontWeight="Bold" FontSize="14" Click="btnSupprimer_Click" />
+        <Grid HorizontalAlignment="Left" Height="55" Margin="101,145,0,0" VerticalAlignment="Top" Width="334" Background="#FFF5E4CC">
+            <Image HorizontalAlignment="Left" Height="25" Margin="10,14,0,0" VerticalAlignment="Top" Width="25" Source="Images/icons8_user_25px.png" Stretch="Fill"/>
+            <TextBox x:Name="txtNom" HorizontalAlignment="Left" Height="23" Margin="98,17,0,0" TextWrapping="Wrap" Foreground="Gray" Text="{Binding SelectedItem.nom, ElementName=cbIdentifiant}" VerticalAlignment="Top" Width="204" BorderBrush="#FFF5E4CC" Background="#FFF5E4CC" FontSize="14" SelectionBrush="#FFF5E4CC" IsEnabled="False"/>
+            <Label Content="Nom : " HorizontalAlignment="Left" Margin="49,13,0,0" VerticalAlignment="Top" FontSize="14"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="55" Margin="101,218,0,0" VerticalAlignment="Top" Width="334" Background="#FFF5E4CC">
+            <Image HorizontalAlignment="Left" Height="25" Margin="10,14,0,0" VerticalAlignment="Top" Width="25" Source="Images/icons8_user_25px.png" Stretch="Fill"/>
+            <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Height="23" Margin="119,17,0,0" TextWrapping="Wrap" Foreground="Gray" Text="{Binding SelectedItem.prenom, ElementName=cbIdentifiant }" VerticalAlignment="Top" Width="201" BorderBrush="#FFF5E4CC" Background="#FFF5E4CC" FontSize="14" SelectionBrush="#FFF5E4CC" IsEnabled="False"/>
+            <Label Content="Prénom : " HorizontalAlignment="Left" Margin="49,13,0,0" VerticalAlignment="Top" FontSize="14"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="55" Margin="101,72,0,0" VerticalAlignment="Top" Width="334" Background="#FFF5E4CC">
+            <Image HorizontalAlignment="Left" Height="25" Margin="10,14,0,0" VerticalAlignment="Top" Width="25" Source="Images/icons8_user_25px.png" Stretch="Fill"/>
+            <ComboBox x:Name="cbIdentifiant" HorizontalAlignment="Left" Height="21" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="idMedecin" Margin="52,24,0,0" VerticalAlignment="Top" Width="220" BorderBrush="#FFF5E4CC">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFF5E4CC" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
+            <Label Content="Identifiant" HorizontalAlignment="Left" Foreground="Gray" Margin="47,0,0,0" VerticalAlignment="Top" FontSize="14"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,26 @@
+﻿<Window x:Class="NorthernLightsHospital.ListePatients"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NorthernLightsHospital"
+        mc:Ignorable="d"
+        Title="Liste des Patients" Height="402.75" Width="946.375" Icon="Images/icons8_headache_25px.png" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid Background="AntiqueWhite">
+        <DataGrid x:Name="dgListePatient"  HorizontalAlignment="Center" AlternatingRowBackground="Aqua" AutoGenerateColumns="False" RowBackground="Bisque" Height="289" Margin="25,39,0,0" VerticalAlignment="Center" Width="896" ItemsSource="{Binding}" Background="AntiqueWhite"  BorderThickness="2,1" FontWeight="Bold" FontSize="20" Padding="5,5,5,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <DataGrid.Effect>
+                <DropShadowEffect BlurRadius="15"/>
+            </DataGrid.Effect>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="NSS" Foreground="#FF2C69D3" Binding="{Binding NSS}" FontWeight="Bold" />
+                <DataGridTextColumn Header="Prénom" Binding="{Binding prenom}" />
+                <DataGridTextColumn Header="Nom" Binding="{Binding nom}" />
+                <DataGridTextColumn Header="Téléphone" Binding="{Binding telephone}" />
+                <DataGridTextColumn Header="Date de naissance" Binding="{Binding date}" />
+                <DataGridTextColumn Header="Code Postal" Binding="{Binding code}" />
+                <DataGridTextColumn Header="Adresse" Binding="{Binding adresse}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
